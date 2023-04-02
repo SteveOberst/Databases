@@ -58,8 +58,8 @@ As you can see, here we used the @UniqueIdentifier annotation to mark a field as
 assign a new ID for each new user registered in the database.
 
 ### How does the framework choose the right data type for each field that will be stored in my MySQL database?
-The framework automatically maps java types to their respective MySQL type. However, these might not always be the right ones
-or the ones you will end up using so you can tell the framework which data type it should use to save a certain field.
+The framework automatically maps java types to their respective MySQL type. However, these might not always be accurate
+or the ones you will end up wanting to use so you can tell the framework which data type it should use to save a certain field.
 ```java
 @Data
 @TableName("FooBar")
