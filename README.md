@@ -90,7 +90,7 @@ public class MyDatabaseHandler {
   }
   
   public User createUser(final long uuid) {
-    final User user = new User(uuid, -1, "Steve", 18, 75.5d, "Passionate Programmer!")
+    final User user = new User(uuid, 0, "Steve", 18, 75.5d, "Passionate Programmer!")
     database.save(user);
     return user;
   }
