@@ -148,11 +148,11 @@ public class Foo {
 when saving this object to the database, only FooBar will be included in the dataset.
 
 
-### Challenges faced during this project
+# Challenges faced during this project
 It really was tough to find a way to abstract Databases like MongoDB, Flat file storage (JSON) and MySQL as they are so fundamentally different. However, the
 framework offers a variaty of ways to deal with their differences, mostly by using annotations.
 
-### License
+# License
 ```
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the “Software”), to deal
