@@ -43,9 +43,8 @@ public class User {
   private double weight;
   private String biography
   
-  public User(final long uuid, final int id, final String name, final int age, final double weight, final String biography) {
+  public User(final long uuid, final String name, final int age, final double weight, final String biography) {
     this.uuid = uuid;
-    this.id = id;
     this.name = name;
     this.age = age;
     this.weight = weight;
@@ -90,7 +89,7 @@ public class MyDatabaseHandler {
   }
   
   public User createUser(final long uuid) {
-    final User user = new User(uuid, 0, "Steve", 18, 75.5d, "Passionate Programmer!")
+    final User user = new User(uuid, "Steve", 18, 75.5d, "Passionate Programmer!")
     database.save(user);
     return user;
   }
