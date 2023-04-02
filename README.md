@@ -1,7 +1,7 @@
 # Databases
 A framework simplifying and abstracting database access.
 
-### Getting started
+# Getting started
 Using this framework is as simple as it gets. Simply create a class implementing DatabaseSettings, pass it to and instantiate a database by using Database#ofType and use the provided methods to interact with the database.
 ```java
 
@@ -125,6 +125,28 @@ public class MyDatabaseHandler {
   }
 }
 ```
+
+## We can also mark fields that should not be serialized within the objects
+Fields that should not be serialized are to be marked with the @Ignore annotation.
+```java
+
+@Data
+@TableName("FooBar")
+public class Foo {
+    @UniqueIdentifier
+    final FooBar fooBar;
+    
+    @Ignore
+    final Bar bar;
+    
+    public Foo(final FooBar fooBar, final Bar bar) {
+        this.fooBar = fooBar;
+        this.bar = bar;
+    }
+}
+```
+when saving this object to the database, only FooBar will be included in the dataset.
+
 
 ### Challenges faced during this project
 It really was tough to find a way to abstract Databases like MongoDB, Flat file storage (JSON) and MySQL as they are so fundamentally different. However, the
