@@ -4,7 +4,6 @@ import com.google.common.collect.Maps;
 import com.google.gson.*;
 import lombok.NonNull;
 import net.sxlver.databases.adapter.strategy.CustomToNumberPolicy;
-import net.sxlver.databases.impl.CustomTypeAdapterFactory;
 import net.sxlver.databases.util.Reflection;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -39,8 +38,7 @@ public abstract class AbstractDatabase<T> implements Database<T> {
                 .disableInnerClassSerialization()
                 .disableHtmlEscaping()
                 .setPrettyPrinting()
-                .setObjectToNumberStrategy(CustomToNumberPolicy.INT_LONG_DOUBLE)
-                .registerTypeAdapterFactory(new CustomTypeAdapterFactory());
+                .setObjectToNumberStrategy(CustomToNumberPolicy.INT_LONG_DOUBLE);
 
         this.gson = gsonBuilder.create();
 
