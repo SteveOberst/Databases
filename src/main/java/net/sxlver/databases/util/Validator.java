@@ -4,7 +4,6 @@ import net.sxlver.databases.annotation.UniqueIdentifier;
 import net.sxlver.databases.converter.ConversionContext;
 import net.sxlver.databases.exception.DatabaseException;
 import net.sxlver.databases.impl.mysql.annotation.AutoIncrement;
-import org.bukkit.Bukkit;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;

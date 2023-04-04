@@ -10,7 +10,6 @@ import net.sxlver.databases.impl.DatabaseEntryIdentifier;
 import net.sxlver.databases.impl.json.context.JSONConversionContext;
 import net.sxlver.databases.util.FileSystemUtil;
 import net.sxlver.databases.util.Reflection;
-import org.bukkit.Bukkit;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
@@ -156,7 +155,7 @@ public class JSONDatabase<T> extends AbstractDatabase<T> {
                 // deserialized all at once
                 mappedResults.add(map);
             }catch(final Exception exception) {
-                // Throw DatabaseException if a error is encountered
+                // Throw DatabaseException if an error is encountered
                 // whilst processing the contents of the target file
                 throw new DatabaseException(exception.getMessage());
             }

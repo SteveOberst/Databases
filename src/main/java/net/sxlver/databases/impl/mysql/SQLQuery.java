@@ -1,7 +1,6 @@
 package net.sxlver.databases.impl.mysql;
 
 import net.sxlver.databases.exception.DatabaseException;
-import org.bukkit.Bukkit;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
