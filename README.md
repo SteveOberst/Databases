@@ -146,6 +146,32 @@ public class Foo {
 ```
 when saving this object to the database, only FooBar will be included in the dataset.
 
+## Serializing Custom Objects
+We can define custom converters for certain objects we want to serialize a specific way.
+All you need to do is implement the DatabaseConverter interface and provide the class as serializer for the field.
+
+```java
+public class UUIDConverter implements DatabaseConverter<UUID, String> {
+    @Override
+    public UUID deserialize(final String toDeserialize, final ConversionContext context) {
+        return UUID.fromString(toDeserialize);
+    }
+
+    @Override
+    public String serialize(final UUID toSerialize, final ConversionContext context) {
+        return toSerialize.toString();
+    }
+}
+```
+In the data object:
+```java
+public class MyDataObject {
+    // data...
+    @UniqueIdentifier
+    @CustomConverter(UUIDConverter.class)
+    private UUID uniqueId;
+}
+```
 
 # Challenges faced during this project
 It really was tough to find a way to abstract Databases like MongoDB, Flat file storage (JSON) and MySQL as they are so fundamentally different. However, the
